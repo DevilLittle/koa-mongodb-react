@@ -1,12 +1,12 @@
 /**
  * webpack prod配置
  */
-const webpack = require('webpack')
-const merge = require('webpack-merge')
-const base = require('./webpack.config.base')()
-const appWebpack = require('./../app.config').webpack
-const ExtractCssChunks = require("extract-css-chunks-webpack-plugin")
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const webpack = require('webpack');
+const merge = require('webpack-merge');
+const base = require('./webpack.config.base')();
+const appWebpack = require('./../app.config').webpack;
+const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const config = merge(base, {
   mode: 'production',
@@ -43,6 +43,6 @@ const config = merge(base, {
       }
     ),
   ]
-}, appWebpack)
+}, appWebpack);
 
-module.exports = config
+module.exports = config;

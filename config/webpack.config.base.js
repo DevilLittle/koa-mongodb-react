@@ -1,24 +1,23 @@
 /**
  * webpack base配置
  */
-const path = require('path')
-const webpack = require('webpack')
-const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
-const isProd = process.env.NODE_ENV === 'production'
-const appConfig = require('./../app.config')
-const appVersion = new Date().getTime()
+const isProd = process.env.NODE_ENV === 'production';
+const appConfig = require('./../app.config');
+const appVersion = new Date().getTime();
 
 function resolve(dir) {
-  return path.resolve(process.cwd(), dir)
+  return path.resolve(process.cwd(), dir);
 }
 
 //浏览器打开的图标
 const icon = './client/img/back.jpg';
 const favicon = path.join(process.cwd(), icon);
-
 
 module.exports = function () {
   const config = {
@@ -80,6 +79,6 @@ module.exports = function () {
         maxChunks: 1
       })
     ],
-  }
-  return config
-}
+  };
+  return config;
+};

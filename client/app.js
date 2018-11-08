@@ -1,14 +1,18 @@
 
-import React from 'react'
+import React from 'react';
+import Header from './components/header';
+
+import './css/common.css';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        {this.props.children || "Welcome to Index Page"}
+        <Header/>
+        {this.props.children || 'Welcome to Index Page'}
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
