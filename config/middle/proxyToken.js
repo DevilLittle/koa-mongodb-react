@@ -33,7 +33,7 @@ module.exports = function createRedis() {
             const responseToken = ctx.response.headers[accessTokenHeaderName];
 
             // 如果后端响应头里没有token，则不设置cookie
-            if (!responseToken) return
+            if (!responseToken) return;
             logger.info(`Token found: ${responseToken}', it will be set to cookie.`);
 
             // 这里koa-better-http-proxy已经把代理响应头复制到原始响应头了
