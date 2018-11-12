@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app';
-import {AppContainer} from 'react-hot-loader';
+import { AppContainer } from 'react-hot-loader';
 
 // function init() {
 ReactDOM.render(
-    <App/>,
+    <App />,
     document.getElementById('app')
 );
 

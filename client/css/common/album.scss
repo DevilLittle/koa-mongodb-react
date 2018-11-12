@@ -1,0 +1,13 @@
+.album {
+    padding: 10px;
+
+    &-list {
+        display: flex;
+        justify-content: space-around;
+
+        &-item {
+            float: left;
+            list-style: none;
+        }
+    }
+}
