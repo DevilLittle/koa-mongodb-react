@@ -5,8 +5,13 @@ const UserModel = new Schema({
     name: String,
 });
 
-const User = mongoose.model('user', UserModel);
+// const User = mongoose.model('user', UserModel);
 
-module.exports = {
-    User
-};
+//
+// module.exports = {
+//     User
+// };
+
+
+
+module.exports = mongoose.model('user', UserModel);
