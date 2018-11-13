@@ -1,67 +1,63 @@
+$shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
 .album-item {
-    width: 140px;
-    height: 204px;
+    width: 200px;
+    height: 200px;
     font-size: 14px;
-    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 2px;
+    box-shadow: $shadow;
 
-    &-box {
-        width: 140px;
-        height: 140px;
-        background-color: #c5c8ce;
+    &-content {
+        width: 100%;
+        height: 150px;
         position: relative;
+        overflow: hidden;
 
-        .item-img {
-            display: block;
+        .bg-img {
             width: 100%;
-            height: 100%;
+            height: 150px;
+            background-image: url('../../img/back.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            transition: all .5s;
+            cursor: pointer;
+
+            &:hover {
+                transition: all .5s;
+                transform: scale(1.07) translateZ(0);
+            }
         }
 
-        .item-link {
+        .item-title {
             position: absolute;
+            width: 200px;
+            box-sizing: border-box;
             top: 0px;
             left: 0px;
-            width: 100%;
-            height: 100%;
-        }
-
-        .item-detail {
-            position: absolute;
-            left: 0px;
-            bottom: 0px;
-            width: 100%;
-            height: 27px;
-            line-height: 27px;
-            font-size: 12px;
-            color: #ccc;
-            cursor: context-menu;
-            background: url('../../img/coverall.png') no-repeat;
-            background-position: 0 -537px;
-
-            .count {
-                float: left;
-                margin-left: 10px;
-            }
-
-            .play {
-                float: right;
-                margin-right: 10px;
-                cursor: pointer;
-
-                &:hover {
-                    color: #fff;
-                }
-            }
+            background-color: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            padding: 5px;
+            text-align: justify;
         }
     }
 
-    &-desc {
+    &-bottom {
         padding: 5px;
         color: #333;
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
+        text-align: justify;
+
+        .count {
+            float: left;
+            margin-left: 10px;
+        }
     }
 }
 

@@ -1,13 +1,14 @@
 .album {
-    padding: 10px;
 
     &-list {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
         &-item {
             float: left;
             list-style: none;
+            margin-bottom: 20px;
         }
     }
 }

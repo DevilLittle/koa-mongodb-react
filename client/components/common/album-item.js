@@ -26,17 +26,15 @@ class AlbumItem extends React.Component {
     render() {
         return (
             <div className="album-item">
-                <div className="album-item-box">
-                    <img className="item-img" src={this.props.imgUrl} />
-                    <a className="item-link" title={this.props.desc} href={this.props.linkUrl}></a>
+                <div className="album-item-content">
+                    <div className="bg-img"></div>
+                    <p className="item-title">{this.props.desc}</p>
+                </div>
+                <div className="album-item-bottom">
                     <p className="item-detail">
                         <span className="count">播放数</span>
                         <span className="count">{this.props.playCount}</span>
-                        <span className="play">播放</span>
                     </p>
-                </div>
-                <div className="album-item-desc">
-                    <a href={this.props.linkUrl} title={this.props.desc}>{this.props.desc}</a>
                 </div>
             </div>
         );
