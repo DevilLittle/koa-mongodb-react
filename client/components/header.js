@@ -1,5 +1,8 @@
 import React from 'react';
 import '../css/header.scss';
+import request from 'superagent';
+import axios from 'axios';
+const http = require('../../config/http/http');
 
 class Header extends React.Component {
 
@@ -9,18 +12,17 @@ class Header extends React.Component {
     }
 
     getData() {
-        request.get('/api/users/current')
-            .end((err, res)=> {
-                if (err) {
-                    if (res.statusCode === 401) {
-                        alert('Please Login!');
-                        location.href = '/#/login-page'
-                    } else {
-                        return alert(err);
-                    }
-                }
+        console.log(http);
+        axios.get('/api/index/search')
+            .then((err, res) => {
+                console.log(res);
             });
     }
+
+    componentDidMount() {
+        this.getData();
+    }
+
     render() {
         return (
             <div>
@@ -39,6 +41,7 @@ class Header extends React.Component {
             </div>
         );
     }
+
 }
 
 export default Header;
