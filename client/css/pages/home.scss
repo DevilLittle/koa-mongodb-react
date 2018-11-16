@@ -1,4 +1,6 @@
-$shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
+$shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+rgba(0, 0, 0, 0.14) 0px 1px 1px 0px,
+rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
 
 .home {
     overflow: hidden;
@@ -55,45 +57,66 @@ $shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0p
         min-height: 50px;
         padding: 20px 0px;
     }
+
+    &-flex {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .board {
     display: inline-block;
-    width: 227px;
-    background-color: #f5f5f5;
+    width: 49%;
     box-shadow: $shadow;
     margin-right: 1px;
 
     &-top {
         overflow: hidden;
-        padding: 20px 0px;
+        padding: 12px 0px;
+        border-bottom: solid 1px #ccc;
 
         &-img {
             height: 80px;
             width: 80px;
-            background-color: #ccc;
+            background-image: url('../../img/new-song-billboard.jpg');
+            background-repeat: no-repeat;
+            background-size: 80px 80px;
             display: block;
             float: left;
             margin-left: 20px;
         }
 
         &-title {
-            float: left;
-            margin-left: 15px;
-            margin-top: 10px;
+            margin-left: 115px;
             font-weight: 600;
+            font-size: 18px;
+
+            a {
+                text-decoration: none;
+            }
         }
 
         &-operate {
-            float: left;
             margin-top: 10px;
-            margin-left: 15px;
-            font-size: 12px;
+            margin-left: 115px;
+            font-size: 18px;
+            color: #808695;
 
-            .play {}
+            .play {
+                margin-left: 18px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #17233d;
+                }
+            }
 
             .collect {
-                margin-left: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #17233d;
+                }
             }
         }
     }
@@ -104,11 +127,36 @@ $shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0p
             list-style: none;
 
             .item {
-                line-height: 30px;
+                line-height: 35px;
                 position: relative;
+                cursor: pointer;
 
-                &:nth-of-type(odd) {
-                    background-color: rgb(232, 232, 232);
+                &:nth-child(-n+3) {
+                    .item-num {
+                        color: rgb(193, 13, 12);
+                    }
+                }
+
+                &:first-of-type {
+                    .item-num {
+                        font-size: 22px;
+                    }
+                }
+
+                &:nth-child(2) {
+                    .item-num {
+                        font-size: 20px;
+                    }
+                }
+
+                &:nth-child(3) {
+                    .item-num {
+                        font-size: 18px;
+                    }
+                }
+
+                &:hover {
+                    background-color: #f5f5f5;
                 }
 
                 &-num {
@@ -121,6 +169,31 @@ $shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px, rgba(0, 0, 0, 0.14) 0px 1px 1px 0p
                     position: absolute;
                     left: 45px;
                     color: #777;
+                }
+
+                &-play {
+                    float: right;
+                    margin-right: 18px;
+                    font-size: 18px;
+                    color: #808695;
+
+                    &:hover {
+                        color: #17233d;
+                    }
+                }
+
+                &:last-of-type {
+                    border-top: solid 1px #ccc;
+                }
+
+                .more {
+                    float: right;
+                    margin-right: 30px;
+                    color: #17233d;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
                 }
             }
         }
