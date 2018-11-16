@@ -2,18 +2,13 @@
  * koa2 server 入口
  */
 import db from './mongodb/db';
-import mongoose from 'mongoose';
 import API from './api/index';
 
 const Koa = require('koa');
 const convert = require('koa-convert');
 const webpack = require('webpack');
 const merge = require('webpack-merge');
-
 const KoaRouter = require('koa-router')();
-
-const Monk = require('monk');
-
 const koaCompress = require('koa-compress')();
 const loggerMiddleware = require('koa-logger')();
 const errorMiddleware = require('../config/middle/errorMiddleWare');
@@ -41,23 +36,64 @@ const devMiddleware = webpackDevMiddleware(clientCompiler, {
 // koa server
 const app = new Koa();
 
-// dateBase.connect();
-// mongoose.connect('mongodb://localhost/example');
-// const dbt = mongoose.connection;
+let router = KoaRouter;
 
-dbt.on('error', (err) => {
+db.error((err) => {
     console.error(err);
 });
 db.connect(() => {
     console.log('数据库已连接');
 });
 
+// 装载所有路由
+const apiRouter = require('./api/index');
+app.use(apiRouter.routes());
+//
+// app.use('/api', apiRouter);
+
+// router.use('/goods', goods.routes());
+// router.use(router.routes());
+// router.use(router.allowedMethods());
 // 数据库接口
 // API.insertGoods();
 // API.search();
+// KoaRouter.get('/search', apiRouter.search);
+// router.get('/logout', Users.logout);
+
 // API.update();
 // API.delete();
+// console.log(API.search());
+// let monModel = require('./schema/good');
+//
+// router.get('/search', async (ctx, next) => {
+//     ctx.body = 'koa2 string';
+//
+//     // 查询条件
+//     let tj = {sname: '联想笔记本'};
+//
+//     // 查询商品内容信息
+//     let fields = {
+//         sname: 1,
+//         sprice: 2,
+//         stock: 3,
+//         addtime: 4,
+//         sinfo: 5
+//     };
+//
+//     monModel.find(tj, fields, function (err, data) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             console.log(data);
+//             ctx.body = data;
+//         }
+//     });
+// });
+// app.use(router.routes());
+// app.use(router.allowedMethods());
 
+const api = require('./api');
+router.use('/api', api.routes(), api.allowedMethods());
 // 中间件,一组async函数，generator函数需要convert转换
 const middleWares = [
     // 打印请求与响应 日志
@@ -73,7 +109,7 @@ const middleWares = [
     // spa单页应用处理,非api后段请求返回index.html
     spaMiddleWare(),
     // 路由
-    KoaRouter.middleware(),
+    // KoaRouter.middleware(),
     // 代理中间件
     proxyMiddleware(),
 ];
