@@ -1,6 +1,7 @@
 import React from 'react';
 import Album from '@/components/common/album';
 import Billboard from '@/components/common/billboard';
+import Validate from '@/components/common/validate';
 
 import '@/css/pages/home.scss';
 
@@ -48,7 +49,7 @@ class Home extends React.Component {
                         </div>
                     </section>
                 </div>
-                <div className="right-side"></div>
+                <div className="right-side"><Validate></Validate></div>
             </div>
         );
     }
