@@ -50,9 +50,10 @@ module.exports = function () {
     return compose([
         preProxyMiddleware,
         koaHttpProxy(
-            (ctx) => {
-                return ctx._proxyTarget;
-            },
+            // (ctx) => {
+            //     return ctx._proxyTarget;
+            // },
+            'http://172.28.194.33:8088',
             {
                 // 不解析body，不限制body大小
                 parseReqBody: false,
@@ -107,4 +108,7 @@ module.exports = function () {
                 },
             }),
     ]);
+
+    // return koaHttpProxy('http://172.28.194.33:8088', {});
+
 };

@@ -15,7 +15,6 @@ const config = merge(require('../config/webpack.config.dev'));
 const appConfig = require('../app.config');
 const currentIP = require('ip').address();
 const url = `http://${currentIP}:${appConfig.appPort}`;
-
 const db = require('./mongodb/db');
 
 const clientCompiler = webpack(config);
