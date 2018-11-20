@@ -36,6 +36,18 @@ class Album extends React.Component {
                 linkUrl: '#',
                 playCount: 0,
                 desc: '《无患记》预告'
+            }, {
+                id: '5',
+                imgUrl: '#',
+                linkUrl: '#',
+                playCount: 0,
+                desc: '100首华语民谣，因为懂得才有共鸣'
+            }, {
+                id: '6',
+                imgUrl: '#',
+                linkUrl: '#',
+                playCount: 0,
+                desc: '《无患记》预告'
             }]
         };
 
