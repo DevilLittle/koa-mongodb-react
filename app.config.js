@@ -1,8 +1,8 @@
 /**
  * 项目的一些定制化配置
  */
-const path = require('path')
-const constants = require('./constants')
+const path = require('path');
+const constants = require('./constants');
 
 module.exports = {
     // 主服务启动端口
@@ -12,9 +12,10 @@ module.exports = {
     // webpack的差异化配置
     webpack: {
         entry: {
-            app: path.join(__dirname, 'client/index.js')  // 入口
+            // 入口
+            app: path.join(__dirname, 'client/index.js')
         },
     },
     // 自定义中间件 async await函数写法
     middleWares: []
-}
+};

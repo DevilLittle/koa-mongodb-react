@@ -15,12 +15,7 @@ class Good {
     }
 
     find(opts) {
-        return this.model.find(opts, function (err, data) {
-            if (!err) {
-                console.log('data==========');
-                console.log(data);
-            }
-        }).exec();
+        return this.model.find(opts).exec();
     }
 
     update(slect, upt) {

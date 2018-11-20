@@ -1,7 +1,7 @@
 import React from 'react';
 import AlbumItem from './album-item';
 import '@/css/common/album.scss';
-
+import axios from 'axios';
 /**
  * 专辑组件
  */
@@ -50,6 +50,10 @@ class Album extends React.Component {
                 desc: '《无患记》预告'
             }]
         };
+
+        axios.get('http://172.28.194.33:8088/api/good/getGoods').then(res=>{
+            console.log(res);
+        })
     }
 
     render() {
