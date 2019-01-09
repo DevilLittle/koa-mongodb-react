@@ -1,6 +1,7 @@
 import React from 'react';
 import Album from '@/components/common/album';
 import Billboard from '@/components/common/billboard';
+import HotSinger from '@/components/common/hot-singer';
 
 import '@/css/pages/home.scss';
 
@@ -49,7 +50,7 @@ class Home extends React.Component {
                     </section>
                 </div>
                 <div className="right-side">
-
+                    <HotSinger></HotSinger>
                 </div>
             </div>
         );

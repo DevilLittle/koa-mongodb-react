@@ -2,6 +2,8 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@/css/common/billboard.scss';
 
+import img from '@/img/new-song-billboard.jpg';
+
 class Billboard extends React.Component {
 
     constructor(props) {
@@ -29,7 +31,7 @@ class Billboard extends React.Component {
         return (
             <dl className="board">
                 <dt className="board-top">
-                    <div className="board-top-img" src="#"></div>
+                    <img className="board-top-img" src={img} />
                     <p className="board-top-title">
                         <a href="#">{this.props.title}</a>
                     </p>

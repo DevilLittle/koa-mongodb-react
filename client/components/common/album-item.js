@@ -28,6 +28,7 @@ class AlbumItem extends React.Component {
         this.playAlbum = this.playAlbum.bind(this);
         this.toAlbum = this.toAlbum.bind(this);
         this.toggleCollected = this.toggleCollected.bind(this);
+        this.getBackground = this.getBackground.bind(this);
     }
 
     playAlbum() {
@@ -47,11 +48,22 @@ class AlbumItem extends React.Component {
         });
     }
 
+    /**
+     * 获取 background
+     */
+    getBackground(imgUrl) {
+        return {
+            background: `url(${imgUrl})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%'
+        };
+    }
+
     render() {
         return (
             <div className="album-item">
                 <div className="album-item-content">
-                    <div className="bg-img" title="查看专辑" onClick={this.toAlbum}></div>
+                    <div className="bg-img" style={this.getBackground(this.props.imgUrl)} title="查看专辑" onClick={this.toAlbum}></div>
                     <p className="item-title">{this.props.desc}</p>
                     <div className="mask" title="播放专辑" onClick={this.playAlbum}>
                         <FontAwesomeIcon className="play" icon={['far', 'play-circle']}></FontAwesomeIcon>
