@@ -57,6 +57,11 @@ rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
                     color: #17233d;
                 }
             }
+
+            .collected {
+                cursor: pointer;
+                color: #F44336;
+            }
         }
     }
 
@@ -69,6 +74,13 @@ rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
                 line-height: 35px;
                 position: relative;
                 cursor: pointer;
+
+                &:hover {
+                    background-color: #f5f5f5;
+                    .item-play {
+                        display: block;
+                    }
+                }
 
                 &:nth-child(-n+3) {
                     .item-num {
@@ -94,8 +106,8 @@ rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
                     }
                 }
 
-                &:hover {
-                    background-color: #f5f5f5;
+                &:last-of-type {
+                    border-top: solid 1px #ccc;
                 }
 
                 &-num {
@@ -111,6 +123,7 @@ rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
                 }
 
                 &-play {
+                    display: none;
                     float: right;
                     margin-right: 18px;
                     font-size: 18px;
@@ -119,10 +132,6 @@ rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
                     &:hover {
                         color: #17233d;
                     }
-                }
-
-                &:last-of-type {
-                    border-top: solid 1px #ccc;
                 }
 
                 .more {

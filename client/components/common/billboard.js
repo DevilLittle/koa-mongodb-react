@@ -1,6 +1,5 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import '@/css/common/billboard.scss';
 
 class Billboard extends React.Component {
@@ -10,8 +9,20 @@ class Billboard extends React.Component {
 
         this.state = {
             songs: this.props.songs,
-            title: this.props.title
+            title: this.props.title,
+            collected: this.props.collected
         };
+
+        this.toggleCollect = this.toggleCollect.bind(this);
+    }
+
+    /**
+     * 切换收藏 / 取消收藏
+     */
+    toggleCollect() {
+        this.setState({
+            collected: !this.state.collected
+        });
     }
 
     render() {
@@ -23,7 +34,11 @@ class Billboard extends React.Component {
                         <a href="#">{this.props.title}</a>
                     </p>
                     <p className="board-top-operate">
-                        <FontAwesomeIcon className="collect" icon={['far', 'heart']}></FontAwesomeIcon>
+                        {
+                            this.state.collected
+                             ? <FontAwesomeIcon className="collected" icon={['fas', 'heart']} onClick={this.toggleCollect}></FontAwesomeIcon>
+                             : <FontAwesomeIcon className="collect" icon={['far', 'heart']} onClick={this.toggleCollect}></FontAwesomeIcon>
+                        }
                         <FontAwesomeIcon className="play" icon={['far', 'play-circle']}></FontAwesomeIcon>
                     </p>
                 </dt>

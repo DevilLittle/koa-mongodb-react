@@ -1,7 +1,6 @@
 import React from 'react';
 import Album from '@/components/common/album';
 import Billboard from '@/components/common/billboard';
-import Validate from '@/components/common/validate';
 
 import '@/css/pages/home.scss';
 
@@ -44,12 +43,14 @@ class Home extends React.Component {
                             <a className="more" href="#">更多</a>
                         </div>
                         <div className="panel-content panel-flex">
-                            <Billboard title="热歌榜" songs={this.state.hotBillboard}></Billboard>
+                            <Billboard title="热歌榜" songs={this.state.hotBillboard} collected={true}></Billboard>
                             <Billboard title="新歌榜" songs={this.state.newBillboard}></Billboard>
                         </div>
                     </section>
                 </div>
-                <div className="right-side"><Validate></Validate></div>
+                <div className="right-side">
+
+                </div>
             </div>
         );
     }

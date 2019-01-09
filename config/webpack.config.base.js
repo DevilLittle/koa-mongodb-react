@@ -16,7 +16,7 @@ function resolve(dir) {
 }
 
 //浏览器打开的图标
-const icon = './client/img/back.jpg';
+const icon = './favicon.ico';
 const favicon = path.join(process.cwd(), icon);
 
 module.exports = function () {
