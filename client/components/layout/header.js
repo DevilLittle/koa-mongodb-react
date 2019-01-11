@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import '@/css/layout/header.scss';
 
 class Header extends React.Component {
@@ -18,7 +20,6 @@ class Header extends React.Component {
 
     /**
      * 切换菜单高亮
-     * @param {*} e 
      */
     changeMenu(e) {
         this.setState({
@@ -41,6 +42,11 @@ class Header extends React.Component {
                             <li><a id="4" onClick={this.changeMenu} className={this.state.activeMenu == 4 ? 'active' : ''} href="#"> 歌单 </a></li>
                             <li><a id="5" onClick={this.changeMenu} className={this.state.activeMenu == 5 ? 'active' : ''} href="#"> 朋友 </a></li>
                         </ul>
+                        <div className="search">
+                            <FontAwesomeIcon className="search-icon" icon={['fas', 'search']}></FontAwesomeIcon>
+                            <input type="text" placeholder="音乐/视频/用户"/>
+                        </div>
+                        <a className="login">登录</a>
                     </div>
                 </div>
             </div>

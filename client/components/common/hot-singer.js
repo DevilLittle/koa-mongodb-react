@@ -45,7 +45,7 @@ class HotSinger extends React.Component {
             <div className="hot-singer">
                 <div className="hot-singer-top">
                     <span>热门歌手</span>
-                    <a>查看全部</a>
+                    <a>更多</a>
                 </div>
                 <div className="hot-singer-content">
                     <ul className="list">
