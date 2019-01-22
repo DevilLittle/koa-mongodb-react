@@ -1,0 +1,98 @@
+.rec-song {
+    padding: 10px 20px;
+
+    &-top {
+        padding: 5px 0px;
+        margin-bottom: 15px;
+        line-height: 32px;
+        border-bottom: solid 1px #eaeaea;
+        span {
+            font-size: 20px;
+        }
+        a {
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    &-content {
+        .list {
+            list-style: none;
+            .item {
+                display: flex;
+                margin-bottom: 15px;
+                cursor: pointer;
+                position: relative;
+                transition: all .3s;
+
+                &:hover {
+                    background-color: #fff;
+                    img {
+                        width: 48px;
+                        height: 48px;
+                        z-index: 99;
+                    }
+                    .desc {
+                        left: 31px;
+                        height: 48px;
+                        width: 191px;
+                        padding: 5px 10px;
+                        padding-left: 41px;
+                        background-color: #fafafa;
+                        .name {
+                            span {
+                                display: none;
+                            }
+                        }
+                        .singer {
+                            display: block;
+                            color: #808695;
+                            font-size: 12px;
+                        }
+                    }
+                }
+                img {
+                    position: absolute;
+                    background-color: #fff;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    transition: all .3s;
+                }
+                .desc {
+                    width: calc(100% - 25px);
+                    box-sizing: border-box;
+                    position: relative;
+                    left: 25px;
+                    transition: all .3s;
+                    .name {
+                        color: #17233d;
+                        font-weight: 600;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        span {
+                            font-weight: 100;
+                        }
+                    }
+                    .singer {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @keyframes rec-songs-logo-show {
+//     from {
+//         opacity: 0;
+//         left: 30px;
+//         transform: rotate(90deg);
+//     }
+//     to {
+//         opacity: 1;
+//         left: 0px;
+//         transform: rotate(0deg);
+//     }
+// }

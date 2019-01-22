@@ -1,0 +1,52 @@
+.hot-singer {
+    padding: 10px 20px;
+
+    &-top {
+        padding: 5px 0px;
+        margin-bottom: 15px;
+        line-height: 32px;
+        border-bottom: solid 1px #eaeaea;
+        span {
+            font-size: 20px;
+        }
+        a {
+            float: right;
+            cursor: pointer;
+        }
+    }
+
+    &-content {
+        .list {
+            list-style: none;
+            .item {
+                display: flex;
+                margin-bottom: 15px;
+                background-color: #fafafa;
+                cursor: pointer;
+                &:hover {
+                    background-color: #f4f4f4;
+                }
+                img {
+                    width: 62px;
+                    height: 62px;
+                }
+                .desc {
+                    width: 100%;
+                    flex: 1;
+                    padding: 5px 10px;
+                    border: solid 1px #eaeaea;
+                    border-left: none;
+                    .name {
+                        color: #17233d;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                    }
+                    .type {
+                        color: #808695;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

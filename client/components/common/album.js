@@ -1,7 +1,9 @@
 import React from 'react';
 import AlbumItem from './album-item';
 import '@/css/common/album.scss';
-import axios from 'axios';
+
+const img = require('@/img/back.jpg');
+
 /**
  * 专辑组件
  */
@@ -14,46 +16,45 @@ class Album extends React.Component {
             // 专辑列表
             albums: [{
                 id: '1',
-                imgUrl: '#',
+                imgUrl: img,
                 linkUrl: '#',
                 playCount: 0,
-                desc: '『温情冷暖 ，人间的烟火故事』'
+                desc: '『温情冷暖 ，人间的烟火故事』',
+                collected: true
             }, {
                 id: '2',
-                imgUrl: '#',
+                imgUrl: img,
                 linkUrl: '#',
                 playCount: 0,
                 desc: '零度星球 | 只有电子能拯救宇宙'
             }, {
                 id: '3',
-                imgUrl: '#',
+                imgUrl: img,
                 linkUrl: '#',
                 playCount: 0,
-                desc: '100首华语民谣，因为懂得才有共鸣'
+                desc: '100首华语民谣，因为懂得才有共鸣',
+                collected: true
             }, {
                 id: '4',
-                imgUrl: '#',
+                imgUrl: img,
                 linkUrl: '#',
                 playCount: 0,
                 desc: '《无患记》预告'
             }, {
                 id: '5',
-                imgUrl: '#',
+                imgUrl: img,
                 linkUrl: '#',
                 playCount: 0,
                 desc: '100首华语民谣，因为懂得才有共鸣'
             }, {
                 id: '6',
-                imgUrl: '#',
+                imgUrl: img,
                 linkUrl: '#',
                 playCount: 0,
-                desc: '《无患记》预告'
+                desc: '《无患记》预告',
+                collected: true
             }]
         };
-
-        axios.get('http://172.28.194.33:8088/api/good/getGoods').then(res=>{
-            console.log(res);
-        })
     }
 
     render() {
@@ -64,7 +65,7 @@ class Album extends React.Component {
                         this.state.albums.map(item => {
                             return (
                                 <li className="album-list-item" key={item.id}>
-                                    <AlbumItem imgUrl={item.imgUrl} linkUrl={item.linkUrl} playCount={item.playCount} desc={item.desc} />
+                                    <AlbumItem imgUrl={item.imgUrl} linkUrl={item.linkUrl} playCount={item.playCount} desc={item.desc} collected={item.collected} />
                                 </li>
                             );
                         })
