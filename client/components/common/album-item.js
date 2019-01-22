@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '@/css/common/album-item.scss';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 /**
  * 单个专辑
@@ -22,13 +21,14 @@ class AlbumItem extends React.Component {
             desc: this.props.desc,
             // 描述图标（待定）
             descIcon: this.props.descIcon,
-            // 手否收藏
-            collected: false
+            // 是否收藏
+            collected:  this.props.collected
         };
 
         this.playAlbum = this.playAlbum.bind(this);
         this.toAlbum = this.toAlbum.bind(this);
         this.toggleCollected = this.toggleCollected.bind(this);
+        this.getBackground = this.getBackground.bind(this);
     }
 
     playAlbum() {
@@ -36,7 +36,7 @@ class AlbumItem extends React.Component {
     }
 
     toAlbum() {
-        alert('进入专辑');
+        alert('查看专辑');
     }
 
     /**
@@ -48,11 +48,22 @@ class AlbumItem extends React.Component {
         });
     }
 
+    /**
+     * 获取 background
+     */
+    getBackground(imgUrl) {
+        return {
+            background: `url(${imgUrl})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '100% 100%'
+        };
+    }
+
     render() {
         return (
             <div className="album-item">
                 <div className="album-item-content">
-                    <div className="bg-img" title="查看专辑" onClick={this.toAlbum}></div>
+                    <div className="bg-img" style={this.getBackground(this.props.imgUrl)} title="查看专辑" onClick={this.toAlbum}></div>
                     <p className="item-title">{this.props.desc}</p>
                     <div className="mask" title="播放专辑" onClick={this.playAlbum}>
                         <FontAwesomeIcon className="play" icon={['far', 'play-circle']}></FontAwesomeIcon>
@@ -65,7 +76,9 @@ class AlbumItem extends React.Component {
                         <div className="icon-group">
                             <div className="icon" onClick={this.toggleCollected}>
                                 {
-                                    this.state.collected ? <FontAwesomeIcon className="collected" icon={['fas', 'heart']}></FontAwesomeIcon> : <FontAwesomeIcon icon={['far', 'heart']}></FontAwesomeIcon>
+                                    this.state.collected
+                                     ? <FontAwesomeIcon className="collected" icon={['fas', 'heart']}></FontAwesomeIcon>
+                                     : <FontAwesomeIcon icon={['far', 'heart']}></FontAwesomeIcon>
                                 }
                             </div>
                             <div className="icon">
